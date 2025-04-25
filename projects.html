@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | My Portfolio</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+    header, footer { background: #333; color: white; padding: 1em; text-align: center; }
+    nav a { margin: 0 15px; color: white; text-decoration: none; }
+    #project-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 2em; }
+    .project-card { background: white; padding: 1em; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.2s; }
+    .project-card:hover { transform: translateY(-5px); }
+    .project-card img { width: 100%; height: 150px; object-fit: cover; border-radius: 6px; }
+    .project-card a { text-decoration: none; color: #333; }
+    .project-card a:hover { color: #007BFF; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Projects</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div id="project-container"></div>
+
+  <footer>
+    <p>&copy; 2025 Rebakalpraisy</p>
+  </footer>
+
+  <script>
+    const projects = [
+      {
+        title: "Personal Blog",
+        description: "Scripting My Ideas and Thoughts into Words",
+        image: "blogging-blog-concepts-ideas-worktable-blogging-blog-concepts-ideas-white-worktable-110423482.webp",
+        link: "https://rebakalpraisy.blogspot.com/2025/04/my-journey-into-content-writing-as.html" 
+      },
+      {
+        title: "E-Commerce Store",
+        description: "Shopping cart with filters and categories.",
+        image: "ai-generated-colorful-online-shopping-and-e-commerce-concept-photo.jpeg",
+        link: "ecom.html"
+      }
+    ];
+
+    const container = document.getElementById("project-container");
+    projects.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "project-card";
+      card.innerHTML = `
+        <img src="${p.image}" alt="${p.title}">
+        <h3><a href="${p.link}" target="_blank">${p.title}</a></h3>
+        <p>${p.description}</p>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
+
